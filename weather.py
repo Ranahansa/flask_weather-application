@@ -13,7 +13,6 @@ def get_current_weather(city="Colombo"):
         raise ValueError("API_KEY environment variable is not set.")
 
     request_url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=imperial"
-
     response = requests.get(request_url)
 
     if response.status_code != 200:
@@ -22,7 +21,6 @@ def get_current_weather(city="Colombo"):
         )
 
     weather_data = response.json()
-
     return weather_data
 
 
